@@ -1,6 +1,6 @@
 {% extends "./bg_base.html" %}
 
-{% load env cloudinary i18n %}
+{% load env cloudinary i18n static %}
 
 {% block body_id %}home{% endblock %}
 
@@ -20,7 +20,8 @@
           <p class="col col-lg-9 col-xl-10 body-large text-center">
             {% trans "minimum security standards badge" as badge_alt %}
             {% url 'min-security-view' as min_sec_url %}
-            {% blocktrans with url=min_sec_url image='<img src="/_images/buyers-guide/badge-star-mini.svg" width="24" height="20" alt="'|add:badge_alt|add:'">' trimmed %}
+            {% static '/_images/buyers-guide/badge-star-mini.svg' as image_src %}
+            {% blocktrans with url=min_sec_url image='<img src="'|add:image_src|add:'" width="24" height="20" alt="'|add:badge_alt|add:'">' trimmed %}
             How creepy is that smart speaker, that fitness tracker, those wireless headphones?
             We created this guide to help you shop for safe, secure connected products.
             Look for this symbol {{image}} for products that meet our <a href="{{url}}">Minimum Security Standards</a>.
