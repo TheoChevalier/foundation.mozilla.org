@@ -12,6 +12,7 @@ from .models import (
     ParticipatePage2,
     Styleguide,
     Homepage,
+    FocusArea,
     RedirectingPage,
 
     BanneredCampaignPage,
@@ -19,6 +20,10 @@ from .models import (
     OpportunityPage,
     BlogPage,
     YoutubeRegretsPage,
+    YoutubeRegretsReporterPage,
+
+    PublicationPage,
+    ArticlePage,
 
     CTA,
     Petition,
@@ -26,6 +31,11 @@ from .models import (
 
     # DEPRECATED
     PeoplePage,
+)
+
+from .pagemodels.base import (
+    HomepageTakeActionCards,
+    PartnerLogos,
 )
 
 from .donation_modal import DonationModal
@@ -154,10 +164,42 @@ class StyleguideTR(TranslationOptions):
 class HomepageTR(TranslationOptions):
     fields = (
         'hero_headline',
-        'hero_story_description',
         'hero_button_text',
         'hero_button_url',
         'hero_image',
+        'cause_statement',
+        'cause_statement_link_text',
+        'quote_image',
+        'quote_text',
+        'quote_source_name',
+        'quote_source_job_title',
+        'partner_heading',
+        'partner_intro_text',
+        'partner_page_text',
+        'take_action_title',
+        'spotlight_headline',
+    )
+
+
+@register(FocusArea)
+class FocusAreaTR(TranslationOptions):
+    fields = (
+        'name',
+        'description',
+    )
+
+
+@register(HomepageTakeActionCards)
+class HomepageTakeActionCardsTR(TranslationOptions):
+    fields = (
+        'text',
+    )
+
+
+@register(PartnerLogos)
+class PartnerLogosTR(TranslationOptions):
+    fields = (
+        'name',
     )
 
 
@@ -166,6 +208,16 @@ class RedirectingPageTR(TranslationOptions):
     fields = (
         'URL',
     )
+
+
+@register(PublicationPage)
+class PublicationPageTR(TranslationOptions):
+    fields = ()
+
+
+@register(ArticlePage)
+class ArticlePageTR(TranslationOptions):
+    fields = ()
 
 # The following bindings are obsolete and require cleanup
 
@@ -178,7 +230,6 @@ class PeoplePageTR(TranslationOptions):
 @register(BlogPage)
 class BlogPageTR(TranslationOptions):
     fields = (
-        'author',
         'body',
     )
 
@@ -191,4 +242,13 @@ class YoutubeRegretsPageTR(TranslationOptions):
         'intro_images',
         'faq',
         'regret_stories',
+    }
+
+
+@register(YoutubeRegretsReporterPage)
+class YoutubeRegretsReporterPageTR(TranslationOptions):
+    fields = {
+        'headline',
+        'intro_text',
+        'intro_images',
     }
