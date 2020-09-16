@@ -36,7 +36,7 @@
 
     &.full-width {
       width: 100%;
-      height: audo;
+      height: auto;
 
       & img {
         width: 100%;
@@ -85,11 +85,6 @@
       }
     }
   }
-}
-
-.homepage-feature p {
-  font-size: inherit;
-  line-height: inherit;
 }
 
 #wagtail-draft-warning {
