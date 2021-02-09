@@ -282,6 +282,7 @@ class GeneralProductPageTR(TranslationOptions):
         'how_can_you_control_your_data',
         'track_record_details',
         'offline_use_description',
+        'user_friendly_privacy_policy',
         'ai_helptext',
     )
 
